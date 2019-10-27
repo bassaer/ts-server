@@ -7,7 +7,7 @@ node_js:
 service:
 - docker
 script:
-- docker build -t bassaer/ts-server
+- docker build -t bassaer/ts-server .
 - docker run -d -p 8080:8080 bassaer/ts-server
 deploy:
   provider: script

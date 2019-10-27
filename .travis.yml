@@ -1,0 +1,15 @@
+languare: node_js
+branches:
+  only:
+  - master
+node_js:
+- 12
+cache: yarn
+script:
+- yarn install --ignore-engines
+- yarn build
+deploy:
+  provider: script
+  script: bash scripts/docker_push.sh
+  on:
+    branch: master

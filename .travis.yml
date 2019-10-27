@@ -10,6 +10,7 @@ script:
 - yarn build
 deploy:
   provider: script
+  deploy.skip_cleanup: true
   script: bash scripts/docker_push.sh
   on:
     branch: master

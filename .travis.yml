@@ -4,10 +4,11 @@ branches:
   - master
 node_js:
 - 12
-cache: yarn
+service:
+- docker
 script:
-- yarn install --ignore-engines
-- yarn build
+- docker build -t bassaer/ts-server
+- docker run -d -p 8080:8080 bassaer/ts-server
 deploy:
   provider: script
   skip_cleanup: true
